@@ -4,138 +4,176 @@
         <title></title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="css/style.css" rel="stylesheet">
     </head>
     <body>
 
-        <script src="./game.js"></script>
-
         <style>
-            td
-            {
-	            width: 100px;
-	            height: 100px;
-            }
+		    td
+		    {
+		        width: 100px;
+		        height: 100px;
+		    }
 
 		    .Board
 		    {
-		        width: 50%;
-		        height: 75%;
+		        width: 310px;
+		        height: 310px;
 		        margin: auto;
 		    }
 
 		    .Normal
-            {
-            background-color: gray;
-		    border: 1px solid black;
-	        width: 100%;
-	        height: 100%;
+		    {
+		        background-color: gray;
+		        border: 1px solid black;
+		        width: 100%;
+		        height: 100%;
+		        position: relative;
 		    }
 
 		    .Reroll
-            {
-            background-color: orange;
-		    border: 1px solid black;
-            width: 100%;
-            height: 100%;
+		    {
+		        background-color: orange;
+		        border: 1px solid black;
+		        width: 100%;
+		        height: 100%;
+		        position: relative;
 		    }
 
 		    .Safe
-            {
-            background-color: green;
-		    border: 1px solid black;
-            width: 100%;
-            height: 100%
+		    {
+		        background-color: green;
+		        border: 1px solid black;
+		        width: 100%;
+	            height: 100%;
+	            position: relative;
+		    }
+
+		    .Player1
+		    {
+		        display: table;
+		        border-radius: 50%;
+		        background-color: blue;
+		        width: 50%;
+		        height: 50%;
+				position: absolute;
+				left: 25%;
+				top: 25%;
+			}
+
+		            .Player2
+		    {
+		        display: table;
+		        border-radius: 50%;
+		        background-color: red;
+		        width: 50%;
+		        height: 50%;
+	            position: absolute;
+	            left: 25%;
+		        top: 25%;
 		    }
 	    </style>
+
+        <script>
+            function RemovePiece(x, y)
+            {
+                Document.getElementById(x + "x" + y).innerHTML = "";
+            }
+
+            function AddPiece(x, y)
+            {
+                
+            }
+        </script>
 
         <table id="tblBoard" class="Board">
             <tr>
                 <td>
-                    <div id="0x0" class="Reroll"/>
+                    <div id="0x0" class="Reroll">
+                    </div>
                 </td>
                 <td>
-                    <div id="0x1" class="Normal"/>
+                    <div id="0x1" class="Normal">
+                    </div>
                 </td>
                 <td>
-                    <div id="0x2" class="Reroll"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="1x0" class="Normal"/>
-                </td>
-                <td>
-                    <div id="1x1" class="Safe"/>
-                </td>
-                <td>
-                    <div id="1x2" class="Normal"/>
+                    <div id="0x2" class="Reroll"></div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div id="2x0" class="Normal"/>
+                    <div id="1x0" class="Normal"></div>
                 </td>
                 <td>
-                    <div id="2x1" class="Normal"/>
+                    <div id="1x1" class="Safe"></div>
                 </td>
                 <td>
-                    <div id="2x2" class="Normal"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="3x0" class="Normal"/>
-                </td>
-                <td>
-                    <div id="3x1" class="Normal"/>
-                </td>
-                <td>
-                    <div id="3x2" class="Normal"/>
+                    <div id="1x2" class="Normal"></div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div id="4x0" />
+                    <div id="2x0" class="Normal"></div>
                 </td>
                 <td>
-                    <div id="4x1" class="Safe"/>
+                    <div id="2x1" class="Normal"></div>
                 </td>
                 <td>
-                    <div id="4x2" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id="5x0" />
-                </td>
-                <td>
-                    <div id="5x1" class="Normal"/>
-                </td>
-                <td>
-                    <div id="5x2" />
+                    <div id="2x2" class="Normal"></div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div id="6x0" class="Reroll"/>
+                    <div id="3x0" class="Normal"></div>
                 </td>
                 <td>
-                    <div id="6x1" class="Normal"/>
+                    <div id="3x1" class="Normal"></div>
                 </td>
                 <td>
-                    <div id="6x2" class="Reroll"/>
+                    <div id="3x2" class="Normal"></div>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <div id="7x0" class="Normal"/>
+                    <div id="4x0" ></div>
                 </td>
                 <td>
-                    <div id="7x1" class="Normal"/>
+                    <div id="4x1" class="Safe"></div>
                 </td>
                 <td>
-                    <div id="7x2" class="Normal"/>
+                    <div id="4x2" ></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="5x0" ></div>
+                </td>
+                <td>
+                    <div id="5x1" class="Normal"></div>
+                </td>
+                <td>
+                    <div id="5x2" ></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="6x0" class="Reroll"></div>
+                </td>
+                <td>
+                    <div id="6x1" class="Normal"></div>
+                </td>
+                <td>
+                    <div id="6x2" class="Reroll"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div id="7x0" class="Normal"></div>
+                </td>
+                <td>
+                    <div id="7x1" class="Normal"></div>
+                </td>
+                <td>
+                    <div id="7x2" class="Normal"></div>
                 </td>
             </tr>
         </table>
